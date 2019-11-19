@@ -13,6 +13,7 @@ jQuery(document).ready(function($){
 
 $('.character-wrapper:last-child').after('<p id="new-char-button" class="button">Add new character</p>');
 
+
 //Make new character modal appear and hide.
 
 $('#new-char-button').click(function(){
@@ -88,23 +89,30 @@ $('#new-char-submit').click(function(){
 //Remove character
 $('.remove-character').click(function(){
 
-		var id = $(this).parent().data('id');
-		var form_data = {'id': id}
-		//start the ajax
-				$.ajax({
-					//this is the php file that processes the data
-					url: "character_changes.php",				 
-					//POST method is used
-					type: "POST",	 
-					//pass the data        
-					data: form_data,    							
-					//success
-					success: function (response) {   
-						$("div[data-id='" + response + "']").detach();
-					}      
-				});			 
-				//cancel the submit button default behaviours
-				return false;
+
+		if(confirm("Are you sure?")){
+			var id = $(this).parent().data('id');
+			var form_data = {'id': id}
+			//start the ajax
+					$.ajax({
+						//this is the php file that processes the data
+						url: "character_changes.php",				 
+						//POST method is used
+						type: "POST",	 
+						//pass the data        
+						data: form_data,    							
+						//success
+						success: function (response) {   
+							$("div[data-id='" + response + "']").detach();
+						}      
+					});			 
+					//cancel the submit button default behaviours
+					return false;
+		}
+		else{
+			return false;
+		}
+
 	
  });
 
