@@ -2,7 +2,6 @@
 require('connect.php');
 
 if(isset($_POST['type'])){
-
 $session_id = $_POST['session_id'];
 $id = $_POST['id'];
 $direction = $_POST['direction'];
@@ -54,6 +53,7 @@ if($type == 'health'){
 //Add new character
 
 if(isset($_POST['name'])){
+	echo "hello";
 	$name = $_POST['name'];
 	$level = $_POST['level'];
 	$max_health = $_POST['max_health'];
@@ -63,12 +63,11 @@ if(isset($_POST['name'])){
 
 //Remove character
 
-if(isset($_POST['id'])){
-	$id = $_POST['id'];
-	$removeCharacter = mysqli_query($con, "delete from character_name where id = '$id'");
+if(isset($_POST['char_id'])){
+	$char_id = $_POST['char_id'];
+	$removeCharacter = mysqli_query($con, "delete from character_name where id = '$char_id'");
 	echo $id;
 }
-
 
 $con->close();
 

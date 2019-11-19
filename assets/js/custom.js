@@ -88,11 +88,9 @@ $('#new-char-submit').click(function(){
 
 //Remove character
 $('.remove-character').click(function(){
-
-
 		if(confirm("Are you sure?")){
-			var id = $(this).parent().data('id');
-			var form_data = {'id': id}
+			var char_id = $(this).parent().data('id');
+			var remove_data = {'id': char_id}
 			//start the ajax
 					$.ajax({
 						//this is the php file that processes the data
@@ -100,7 +98,7 @@ $('.remove-character').click(function(){
 						//POST method is used
 						type: "POST",	 
 						//pass the data        
-						data: form_data,    							
+						data: remove_data,    							
 						//success
 						success: function (response) {   
 							$("div[data-id='" + response + "']").detach();
