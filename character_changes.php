@@ -66,7 +66,7 @@ if(isset($_POST['name'])){
 if(isset($_POST['char_id'])){
 	$char_id = $_POST['char_id'];
 	$removeCharacter = mysqli_query($con, "delete from character_name where id = '$char_id'");
-	echo $id;
+	echo $char_id;
 }
 
 $con->close();

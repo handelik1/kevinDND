@@ -90,7 +90,7 @@ $('#new-char-submit').click(function(){
 $('.remove-character').click(function(){
 		if(confirm("Are you sure?")){
 			var char_id = $(this).parent().data('id');
-			var remove_data = {'id': char_id}
+			var remove_data = {'char_id': char_id}
 			//start the ajax
 					$.ajax({
 						//this is the php file that processes the data
@@ -100,7 +100,8 @@ $('.remove-character').click(function(){
 						//pass the data        
 						data: remove_data,    							
 						//success
-						success: function (response) {   
+						success: function (response) {
+						console.log(response);   
 							$("div[data-id='" + response + "']").detach();
 						}      
 					});			 
