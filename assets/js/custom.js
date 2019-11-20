@@ -36,6 +36,20 @@ $('#new-char-button').click(function(){
 	}
 })
 
+//Make battle modal appear and hide.
+
+$('#battle-button').click(function(){
+	if($('.battle-modal.open').length == 0){
+		$('.battle-modal').addClass('open');
+		$(this).html('End Battle');
+	}
+	else{
+		$('.battle-modal').removeClass('open');
+		$(this).html('Start Battle');
+		$('.battle-modal input').val('');
+	}
+})
+
 //Change level or health
 $('.arrow-wrapper img').click(function(){
 

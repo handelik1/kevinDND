@@ -26,6 +26,11 @@ echo '<div class="new-char-modal">
 		<p id="new-char-submit" class="button">Submit</p>
 	  </div>';
 
+echo '<div class="battle-modal">
+		<h2>Round: </h2><input type="number" min="1" max="99" />
+	  </div>
+	  <p id="battle-button" class="button">Start Battle</p>';
+
 renderCharacters();
 
 
