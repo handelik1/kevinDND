@@ -83,7 +83,7 @@ p{
 	cursor: pointer;
 	width: 23px;
 	padding: 2px 5px;
-	margin-bottom: 10px;
+	margin-bottom: 3px;
 	margin-right: 10px;
 	text-transform: uppercase;
 	background: rgb(102,102,102);
@@ -216,4 +216,20 @@ background: linear-gradient(90deg, rgba(219,206,0,1) 0%, rgba(230,215,4,1) 17%, 
 	align-items:  center;
 	justify-content: center;
 	cursor: pointer;
+}
+
+.single-condition input{
+	width: 33px;
+	border: none;
+	height: 20px;
+	text-align: center;
+}
+
+.single-condition{
+	margin-bottom: 10px;
+}
+
+input:disabled{
+	background-color: rgba(0, 0, 0, .3);
+	border: 1px solid #5b5b5b;
 }

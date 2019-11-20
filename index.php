@@ -11,20 +11,20 @@ echo '<!DOCTYPE html>
 <body>
 <div class="site-container">';
 
-			echo '<div class="new-char-modal">
-					<h2>New Character</h2>
-					<div class="modal-input-wrapper">
-						<label>Name: </label><input id="new-name" type="text" />
-					</div>
-					<div class="modal-input-wrapper">
-						<label>Level: </label><input type="text" id="new-level" />
-					</div>
-					<div class="modal-input-wrapper">
-						<label>Max Health: </label><input type="text" id="new-max-health" />
-					</div>
-					<input type="hidden" value="0" />
-					<p id="new-char-submit" class="button">Submit</p>
-				  </div>';
+echo '<div class="new-char-modal">
+		<h2>New Character</h2>
+		<div class="modal-input-wrapper">
+			<label>Name: </label><input id="new-name" type="text" />
+		</div>
+		<div class="modal-input-wrapper">
+			<label>Level: </label><input type="text" id="new-level" />
+		</div>
+		<div class="modal-input-wrapper">
+			<label>Max Health: </label><input type="text" id="new-max-health" />
+		</div>
+		<input type="hidden" value="0" />
+		<p id="new-char-submit" class="button">Submit</p>
+	  </div>';
 
 renderCharacters();
 
@@ -71,7 +71,10 @@ function renderCharacters(){
 							<div class="conditions-wrapper">';
 			$conditionQuery = mysqli_query($con, "select * from conditions");
 			   while($row2 = mysqli_fetch_assoc($conditionQuery)) {
-								echo '<p class="condition" id='.$row2['name'].'>'.$row2['initial'].'<span>'.$row2['name'].'</span></p>';
+								echo '<div class="single-condition">
+										<p class="condition" id='.$row2['name'].'>'.$row2['initial'].'<span>'.$row2['name'].'</span></p>
+										<input type="number" disabled />
+									  </div>';
 				}
 							echo '</div>
 						</div>	

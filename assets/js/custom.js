@@ -1,13 +1,24 @@
-//Change condition
+//Change condition and activate textbox
 jQuery(document).ready(function($){
 	$('.condition').click(function(){
 		if(!$(this).hasClass('active')){
 			$(this).addClass('active');
+			$(this).siblings('input').prop("disabled", false);
 		}
 		else{
 			$(this).removeClass('active');
+			$(this).siblings('input').prop("disabled", true);
+			$(this).siblings('input').val('');
 		}
 	})
+
+//Deactivate condition when it reaches 0.
+$('.single-condition input').change(function(){
+	console.log('yes');
+	if(jQuery(this).val() == 0){
+		jQuery(this).siblings('p').trigger('click');
+	}
+})
 
 //Add new character button
 
