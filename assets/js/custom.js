@@ -24,9 +24,11 @@ $('.single-condition input').change(function(){
 $('.battle-modal input').change(function(){
   	$(this).attr('min', $('.battle-modal input').val())
 	$('.single-condition input').each(function(){
-		$(this).val(parseInt($(this).val()) - 1);
-		if($(this).prop('disabled') == false && $(this).val() == 0){
-			jQuery(this).siblings('p').trigger('click');
+		if($(this).val() != ''){
+			$(this).val(parseInt($(this).val()) - 1);
+			if($(this).prop('disabled') == false && $(this).val() == 0){
+				jQuery(this).siblings('p').trigger('click');
+			}
 		}
 	})
 })
