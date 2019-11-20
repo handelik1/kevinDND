@@ -22,7 +22,7 @@ $('.single-condition input').change(function(){
 //Decrement status when round increases.
 
 $('.battle-modal input').change(function(){
-  	$(this).attr('min', $('.battle-modal input').val())
+  	$(this).attr('min', $('.battle-modal input').val());
 	$('.single-condition input').each(function(){
 		if($(this).val() != ''){
 			$(this).val(parseInt($(this).val()) - 1);
@@ -54,6 +54,7 @@ $('#battle-button').click(function(){
 	if($('.battle-modal.open').length == 0){
 		$('.battle-modal').addClass('open');
 		$(this).html('End Battle');
+  		$(this).siblings('.battle-modal').find('input').attr('min', '1');
 	}
 	else{
 		$('.battle-modal').removeClass('open');
