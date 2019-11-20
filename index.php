@@ -27,7 +27,7 @@ echo '<div class="new-char-modal">
 	  </div>';
 
 echo '<div class="battle-modal">
-		<h2>Round: </h2><input type="number" min="1" max="99" />
+		<h2>Round: </h2><input type="number" min="1" max="99" value="1" />
 	  </div>
 	  <p id="battle-button" class="button">Start Battle</p>';
 

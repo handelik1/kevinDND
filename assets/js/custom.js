@@ -14,16 +14,26 @@ jQuery(document).ready(function($){
 
 //Deactivate condition when it reaches 0.
 $('.single-condition input').change(function(){
-	console.log('yes');
 	if(jQuery(this).val() == 0){
 		jQuery(this).siblings('p').trigger('click');
 	}
 })
 
+//Decrement status when round increases.
+
+$('.battle-modal input').change(function(){
+  	$(this).attr('min', $('.battle-modal input').val())
+	$('.single-condition input').each(function(){
+		$(this).val(parseInt($(this).val()) - 1);
+		if($(this).prop('disabled') == false && $(this).val() == 0){
+			jQuery(this).siblings('p').trigger('click');
+		}
+	})
+})
+
 //Add new character button
 
 $('.character-wrapper:last-child').after('<p id="new-char-button" class="button">Add new character</p>');
-
 
 //Make new character modal appear and hide.
 
@@ -46,7 +56,7 @@ $('#battle-button').click(function(){
 	else{
 		$('.battle-modal').removeClass('open');
 		$(this).html('Start Battle');
-		$('.battle-modal input').val('');
+		$('.battle-modal input').val('1');
 	}
 })
 
