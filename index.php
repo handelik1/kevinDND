@@ -73,7 +73,7 @@ function renderCharacters(){
 			   while($row2 = mysqli_fetch_assoc($conditionQuery)) {
 								echo '<div class="single-condition">
 										<p class="condition" id='.$row2['name'].'>'.$row2['initial'].'<span>'.$row2['name'].'</span></p>
-										<input type="number" disabled />
+										<input type="number" min="0" max="100" disabled />
 									  </div>';
 				}
 							echo '</div>
